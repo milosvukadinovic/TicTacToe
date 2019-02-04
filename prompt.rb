@@ -12,7 +12,11 @@ class Prompt
         puts "  | |   | | | (__      | |   | (_| | | (__      | |   | (_) | |  __/ "
         puts "  |_|   |_| \\___|      |_|    \\__,_|  \\___|     |_|    \\___/   \\___| "
  
- 
+        puts ""
+         # Promtp the info
+         show_info()
+
+        puts ""
         puts "Please enter the name for player one "
         @name1 = gets.chomp
         @player1 = Player.new(@name1,"X")
@@ -26,8 +30,7 @@ class Prompt
         
         @game = Game.new(@player1,@player2)
         
-        # Promtp the info
-        show_info()
+       
         
         # Promting the board
         showboard(@game.board_array)
@@ -45,9 +48,9 @@ class Prompt
             i+=1
         end
         if @game.check_if_win
-            puts "#{@game.current_player_move.name} is the winner "
+            show_winner_text(@game.current_player_move.name)
         else
-            puts "Its a draw!"
+            show_draw_text
         end
     end
 
@@ -71,15 +74,9 @@ How To Play (Use letters corresponding to board position)
     end
 
     def show_winner_text name
-        puts "
-  _____   _               __        __  _                                   _       
- |_   _| | |__     ___    \ \      / / (_)  _ __    _ __     ___   _ __    (_)  ___ 
-   | |   | '_ \   / _ \    \ \ /\ / /  | | | '_ \  | '_ \   / _ \ | '__|   | | / __|
-   | |   | | | | |  __/     \ V  V /   | | | | | | | | | | |  __/ | |      | | \__ \
-   |_|   |_| |_|  \___|      \_/\_/    |_| |_| |_| |_| |_|  \___| |_|      |_| |___/
         
-    #{name}    
-   "
+        puts " ¸.•*¨*•.¸♪¸.•*¨*•.¸♥¸.•*¨*•.¸ Winner is #{name} ¸.•*¨*•.¸♪¸.•*¨*•.¸♥¸.•*¨*•.¸"    
+   
     end
     def show_draw_text
         puts "
@@ -100,14 +97,8 @@ How To Play (Use letters corresponding to board position)
         ──────────────────────────────────
         ───────────█████████████──────────
         ──────────────────────────────────
-        
-          ____                            
-         |  _ \   _ __    __ _  __      __
-         | | | | | '__|  / _` | \ \ /\ / /
-         | |_| | | |    | (_| |  \ V  V / 
-         |____/  |_|     \__,_|   \_/\_/  
-                                
         "
+        puts "Its a draw!"
     end
 end
 

@@ -21,23 +21,68 @@ class Game
         player_move.upcase!
         case player_move
         when "Q"
-            @board_array[0][0] = @current_player_move.mark
+            if @board_array[0][0] == '_'
+                @board_array[0][0] = @current_player_move.mark
+            else
+                puts "That position is already taken, try another one!"
+            move(i)
+            end
         when "W"
-            @board_array[0][1] = @current_player_move.mark
+            if @board_array[0][1] == '_'
+                @board_array[0][1] = @current_player_move.mark
+            else
+                puts "That position is already taken, try another one!"
+            move(i)
+            end
         when "E"
-            @board_array[0][2] = @current_player_move.mark
+            if @board_array[0][2] == '_'
+                @board_array[0][2] = @current_player_move.mark
+            else
+                puts "That position is already taken, try another one!"
+            move(i)
+            end
         when "A"
-            @board_array[1][0]= @current_player_move.mark
+            if @board_array[1][0] == '_'
+                @board_array[1][0] = @current_player_move.mark
+            else
+                puts "That position is already taken, try another one!"
+            move(i)
+            end
         when "S"
-            @board_array[1][1] = @current_player_move.mark
+            if @board_array[1][1] == '_'
+                @board_array[1][1] = @current_player_move.mark
+            else
+                puts "That position is already taken, try another one!"
+            move(i)
+            end
         when "D"
-            @board_array[1][2] = @current_player_move.mark
+            if @board_array[1][2] == '_'
+                @board_array[1][2] = @current_player_move.mark
+            else
+                puts "That position is already taken, try another one!"
+            move(i)
+            end
         when "Z"
-            @board_array[2][0] = @current_player_move.mark
+            if @board_array[2][0] == '_'
+                @board_array[2][0] = @current_player_move.mark
+            else
+                puts "That position is already taken, try another one!"
+            move(i)
+            end
         when "X"
-            @board_array[2][1] = @current_player_move.mark
+            if @board_array[2][1] == '_'
+                @board_array[2][1] = @current_player_move.mark
+            else
+                puts "That position is already taken, try another one!"
+            move(i)
+            end
         when "C"
-            @board_array[2][2] = @current_player_move.mark
+            if @board_array[2][2] == '_'
+                @board_array[2][2] = @current_player_move.mark
+            else
+                puts "That position is already taken, try another one!"
+            move(i)
+            end
         when "EXIT"
             return
         else
