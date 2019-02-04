@@ -30,12 +30,16 @@ class Prompt
         # Get user input and check wining
         #loop the shit up to 9 times. get moves, check every time if there are winning conditions, return the winner, increment score etc
         i=0
-        while i<9
+        while i<9    
             @game.move(i)
-            @game.check_if_win()
+            showboard(@game.board_array)
+           if  @game.check_if_win
+            break
+           end
+
             i+=1
         end
-
+        puts "End of The game"
     end
 
     def showboard arr
