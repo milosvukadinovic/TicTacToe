@@ -11,4 +11,6 @@ class Player
     def show_user
         puts "#{name} #{mark}" 
     end
+
+    
 end

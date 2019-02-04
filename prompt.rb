@@ -35,11 +35,15 @@ class Prompt
             showboard(@game.board_array)
            if  @game.check_if_win
             break
-           end
+            end
 
             i+=1
         end
-        puts "End of The game"
+        if @game.check_if_win
+            puts "#{@game.current_player_move.name} is the winner "
+        else
+            puts "Its a draw!"
+        end
     end
 
     def showboard arr
