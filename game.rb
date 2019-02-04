@@ -1,13 +1,13 @@
 class Game
-    include './player.rb'
-    include './prompt.rb'
+ 
+    attr_accessor :player1 , :player2 , :board_array
 
-    def initialize (player1,player2)
-        
+    def initialize(player1,player2)
+        @player1 = player1
+        @player2 = player2
+        @board_array = Array.new(3){Array.new(3,"_")} 
     end
+    
 
-    def move()
-        print "[_] [X] [_] "
-    end
 
 end

@@ -1,7 +1,9 @@
 class Player
-    attr_accessor :name , :mark , :moves
+    attr_accessor :name , :mark 
 
-    def initialize (name,mark)
+
+    
+    def initialize(name,mark)
         @name = name
         @mark = mark
     end
