@@ -27,8 +27,14 @@ class Prompt
         # Promting the board
         showboard(@game.board_array)
         
-        # Get user input and check wining 
-        
+        # Get user input and check wining
+        #loop the shit up to 9 times. get moves, check every time if there are winning conditions, return the winner, increment score etc
+        i=0
+        while i<9
+            @game.move(i)
+            @game.check_if_win()
+            i+=1
+        end
 
     end
 
