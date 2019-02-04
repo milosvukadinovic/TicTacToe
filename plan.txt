@@ -1,0 +1,6 @@
+
+prompt class - board(refreshes it every input) , 
+
+player class- name, points, turns
+
+game - main algorythm, follows turns, sets points for player ,  
