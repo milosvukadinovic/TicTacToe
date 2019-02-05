@@ -32,6 +32,43 @@ RSpec.describe Game do
             expect(game_array[0][2]).to eq(@game.current_player_move.mark)
         end
         # TODO add more tests 
+        it'Adds X to [1,1] position of the board' do
+            @game.current_player_move = @player1
+            
+            @game.set_board_value("S")
+            
+            game_array = @game.board_array
+
+            expect(game_array[1][1]).to eq(@game.current_player_move.mark)
+        end
+        it'Adds O to [2,2] position of the board' do
+            @game.current_player_move = @player2
+            
+            @game.set_board_value("C")
+            
+            game_array = @game.board_array
+
+            expect(game_array[2][2]).to eq(@game.current_player_move.mark)
+        end
+
+        it'Adds O to [1,2] position of the board' do
+            @game.current_player_move = @player2
+            
+            @game.set_board_value("D")
+            
+            game_array = @game.board_array
+
+            expect(game_array[1][2]).to eq(@game.current_player_move.mark)
+        end
+        it'Adds X to [2,0] position of the board' do
+            @game.current_player_move = @player1
+            
+            @game.set_board_value("Z")
+            
+            game_array = @game.board_array
+
+            expect(game_array[2][0]).to eq(@game.current_player_move.mark)
+        end
 
     end
 
@@ -51,6 +88,51 @@ RSpec.describe Game do
             @game.board_array[2] = arr
             expect(@game.check_if_win).to eq(true)
         end
+        it 'Should return true first vertical line [X],[X],[X]' do 
+            arr = ['X','X','X']
+            @game.board_array[0][0] = arr[0]
+            @game.board_array[0][1] = arr[0]
+            @game.board_array[0][2] = arr[0]
+            expect(@game.check_if_win).to eq(true)
+        end
+        it 'Should return true second vertical line [X],[X],[X]' do 
+            arr = ['X','X','X']
+            @game.board_array[1][0] = arr[0]
+            @game.board_array[1][1] = arr[0]
+            @game.board_array[1][2] = arr[0]
+            expect(@game.check_if_win).to eq(true)
+        end
+        it 'Should return true third vertical line [X],[X],[X]' do 
+            arr = ['X','X','X']
+            @game.board_array[2][0] = arr[0]
+            @game.board_array[2][1] = arr[0]
+            @game.board_array[2][2] = arr[0]
+            expect(@game.check_if_win).to eq(true)
+        end
+        it 'Should return true first diagonal line [X],[X],[X]' do 
+            arr = ['X','X','X']
+            @game.board_array[0][0] = arr[0]
+            @game.board_array[1][1] = arr[0]
+            @game.board_array[2][2] = arr[0]
+            expect(@game.check_if_win).to eq(true)
+        end
+        it 'Should return true second diagonal line [X],[X],[X]' do 
+            arr = ['X','X','X']
+            @game.board_array[0][2] = arr[0]
+            @game.board_array[1][1] = arr[0]
+            @game.board_array[2][0] = arr[0]
+            expect(@game.check_if_win).to eq(true)
+        end
+
+        it 'Should return false  [O],[X],[O]' do 
+            arr = ['O','X','O']
+            @game.board_array[0][2] = arr[0]
+            @game.board_array[1][1] = arr[0]
+            @game.board_array[2][0] = arr[0]
+            expect(@game.check_if_win).not_to eq(true)
+        end
+
+
         
     end
 
