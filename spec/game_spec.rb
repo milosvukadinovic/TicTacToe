@@ -220,36 +220,115 @@ RSpec.describe Game do
         # Second vertical row
         it 'Should return false second vertical row  [X],[O],[X]' do 
             
-            @game.board_array[0][0]= "X"
-            @game.board_array[1][0]= "O"
-            @game.board_array[2][0]= "X"
+            @game.board_array[0][1]= "X"
+            @game.board_array[1][1]= "O"
+            @game.board_array[2][1]= "X"
             expect(@game.check_if_win).not_to eq(true)
         end
 
         it 'Should return false second vertical row  [X],[X],[O]' do 
             
-            @game.board_array[0][0]= "X"
-            @game.board_array[1][0]= "X"
-            @game.board_array[2][0]= "O"
+            @game.board_array[0][1]= "X"
+            @game.board_array[1][1]= "X"
+            @game.board_array[2][1]= "O"
             expect(@game.check_if_win).not_to eq(true)
         end
 
         it 'Should return false second vertical row  [O],[O],[X]' do 
             
-            @game.board_array[0][0]= "O"
-            @game.board_array[1][0]= "O"
-            @game.board_array[2][0]= "X"
+            @game.board_array[0][1]= "O"
+            @game.board_array[1][1]= "O"
+            @game.board_array[2][1]= "X"
             expect(@game.check_if_win).not_to eq(true)
         end
         it 'Should return false second vertical row  [O],[X],[O]' do 
             
-            @game.board_array[0][0]= "O"
-            @game.board_array[1][0]= "X"
-            @game.board_array[2][0]= "O"
+            @game.board_array[0][1]= "O"
+            @game.board_array[1][1]= "X"
+            @game.board_array[2][1]= "O"
             expect(@game.check_if_win).not_to eq(true)
         end
          # Third vertical row
-    end
+    
+         it 'Should return false third vertical row  [X],[O],[X]' do 
+            
+            @game.board_array[0][2]= "X"
+            @game.board_array[1][2]= "O"
+            @game.board_array[2][2]= "X"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+
+        it 'Should return false third vertical row  [X],[X],[O]' do 
+            
+            @game.board_array[0][2]= "X"
+            @game.board_array[1][2]= "X"
+            @game.board_array[2][2]= "O"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+
+        it 'Should return false third vertical row  [O],[O],[X]' do 
+            
+            @game.board_array[0][2]= "O"
+            @game.board_array[1][2]= "O"
+            @game.board_array[2][2]= "X"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+        it 'Should return false third vertical row  [O],[X],[O]' do 
+            
+            @game.board_array[0][2]= "O"
+            @game.board_array[1][2]= "X"
+            @game.board_array[2][2]= "O"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+        #First diagonal
+        it 'Should return false first diagonal row  [X],[X],[O]' do 
+            
+            @game.board_array[0][0]= "X"
+            @game.board_array[1][1]= "X"
+            @game.board_array[2][2]= "O"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+
+        it 'Should return false first diagonal row   [O],[O],[X]' do 
+            
+            @game.board_array[0][0]= "O"
+            @game.board_array[1][1]= "O"
+            @game.board_array[2][2]= "X"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+        it 'Should return false first diagonal row  [O],[X],[O]' do 
+            
+            @game.board_array[0][0]= "O"
+            @game.board_array[1][1]= "X"
+            @game.board_array[2][2]= "O"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+        #Second diagonal
+        it 'Should return false second diagonal row  [X],[X],[O]' do 
+            
+            @game.board_array[0][2]= "X"
+            @game.board_array[1][1]= "X"
+            @game.board_array[2][0]= "O"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+
+        it 'Should return false second diagonal row   [O],[O],[X]' do 
+            
+            @game.board_array[0][2]= "O"
+            @game.board_array[1][1]= "O"
+            @game.board_array[2][0]= "X"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+        it 'Should return false second diagonal row  [O],[X],[O]' do 
+            
+            @game.board_array[0][2]= "O"
+            @game.board_array[1][1]= "X"
+            @game.board_array[2][0]= "O"
+            expect(@game.check_if_win).not_to eq(true)
+        end
+    
+    
+        end
 
 
 
