@@ -17,9 +17,18 @@ class Game
             puts "Player #{@player2.name}'s turn: "
             @current_player_move = @player2
         end
+        
         player_move = gets.chomp
-        player_move.upcase!
-        case player_move
+
+        set_board_value(player_move)
+    end
+
+
+    def set_board_value(player_input)
+        
+        player_input.upcase!
+        
+        case player_input
         when "Q"
             if @board_array[0][0] == '_'
                 @board_array[0][0] = @current_player_move.mark
@@ -91,7 +100,7 @@ class Game
         end
     end
 
-     def check_if_win
+    def check_if_win
         if 
             #horizontal
             check_if_equals(@board_array[0][0],@board_array[0][1],@board_array[0][2]) or 
@@ -111,14 +120,14 @@ class Game
         else
             return false
         end
-      end
+    end
 
-      def check_if_equals(e1,e2,e3)
+    def check_if_equals(e1,e2,e3)
             if e1 == e2 and e2 == e3 and e1 != '_'
                 return true
             else
                 return false
             end
-      end
+    end
 
 end
