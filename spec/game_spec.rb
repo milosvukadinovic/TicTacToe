@@ -126,9 +126,22 @@ RSpec.describe Game do
 
         it 'Should return false  [O],[X],[O]' do 
             arr = ['O','X','O']
-            @game.board_array[0][2] = arr[0]
-            @game.board_array[1][1] = arr[0]
-            @game.board_array[2][0] = arr[0]
+            @game.board_array[0]=arr
+            expect(@game.check_if_win).not_to eq(true)
+        end
+        it 'Should return false  [X],[X],[O]' do 
+            arr = ['X','X','O']
+            @game.board_array[0]=arr
+            expect(@game.check_if_win).not_to eq(true)
+        end
+        it 'Should return false  [O],[X],[X]' do 
+            arr = ['O','X','X']
+            @game.board_array[1]=arr
+            expect(@game.check_if_win).not_to eq(true)
+        end
+        it 'Should return false  [o],[X],[O]' do 
+            arr = ['O','X','O']
+            @game.board_array[2]=arr
             expect(@game.check_if_win).not_to eq(true)
         end
 
