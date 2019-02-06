@@ -77,6 +77,11 @@ class Prompt
         puts "
 
 How To Play:
+
+         * Type Info if you want to show info again during the game.
+
+         * Type Exit if you wish to stop the current game and exit.
+
          * After writing down names for both players, the first player is asked to make his move according to diagram bellow.
 
          * Type the Letter according to the position you wish to play.
