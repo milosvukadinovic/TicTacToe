@@ -12,19 +12,21 @@ class Prompt
         puts "  | |   | | | (__      | |   | (_| | | (__      | |   | (_) | |  __/ "
         puts "  |_|   |_| \\___|      |_|    \\__,_|  \\___|     |_|    \\___/   \\___| "
  
-        puts ""
+        puts 
+
          # Promtp the info
          show_info()
 
-        puts ""
+        puts 
+        # Get user details
         puts "Please enter the name for player one "
-        @name1 = gets.chomp
+        @name1 = gets.chomp.capitalize
         @player1 = Player.new(@name1,"X")
     
 
         
         puts "Please enter the name for player two "
-        @name2 = gets.chomp
+        @name2 = gets.chomp.capitalize
         @player2 = Player.new(@name2,"O")
         
         
@@ -36,8 +38,9 @@ class Prompt
         showboard(@game.board_array)
         
         # Get user input and check wining
-        #loop the shit up to 9 times. get moves, check every time if there are winning conditions, return the winner, increment score etc
+        #loop  9 times. get moves, check every time if there are winning conditions, return the winner, increment score etc
         i=0
+
         while i<9    
             @game.move(i)
             showboard(@game.board_array)
@@ -45,13 +48,21 @@ class Prompt
             break
             end
 
+            if @game.exit
+                break
+            end
+
             i+=1
         end
-        if @game.check_if_win
+
+        if @game.check_if_win 
             show_winner_text(@game.current_player_move.name)
-        else
+        elsif !@game.exit
             show_draw_text
+        else
+            puts "Game Over "
         end
+
     end
 
     def showboard arr
@@ -78,6 +89,7 @@ How To Play (Use letters corresponding to board position)
         puts " ¸.•*¨*•.¸♪¸.•*¨*•.¸♥¸.•*¨*•.¸ Winner is #{name} ¸.•*¨*•.¸♪¸.•*¨*•.¸♥¸.•*¨*•.¸"    
    
     end
+
     def show_draw_text
         puts "
         
@@ -100,6 +112,20 @@ How To Play (Use letters corresponding to board position)
         "
         puts "Its a draw!"
     end
+
+    # helper class methods
+
+    def self.position_taken
+        puts "That position is already taken, try another one!"
+    end
+    def self.unkown_move(player_move)
+        puts "You gave me #{player_move} -- I have no idea what to do with that. Try again. If you want to quit type \"exit\". "
+    end
+
+    def self.show_turn(name)
+        print "Player #{name}'s turn(type 'exit' to stop the game): "
+    end
+
 end
 
 # The Starting Point Of The Game
