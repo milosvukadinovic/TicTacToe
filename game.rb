@@ -97,6 +97,9 @@ class Game
             end
         when "EXIT"
             @exit = true
+        when "INFO"
+            Prompt.show_info
+            move(i)
         else
             Prompt.unkown_move(player_input)
             move(i)
