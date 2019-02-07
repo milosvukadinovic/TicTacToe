@@ -37,14 +37,14 @@ class Game
                 @board_array[0][0] = @current_player_move.mark
             else
                 Prompt.position_taken
-            move(i)
+             move(i)
             end
         when "W"
             if @board_array[0][1] == '_'
                 @board_array[0][1] = @current_player_move.mark
             else
                Prompt.position_taken
-            move(i)
+             move(i)
             end
         when "E"
             if @board_array[0][2] == '_'
