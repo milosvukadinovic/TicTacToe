@@ -25,7 +25,12 @@ class Game
         set_board_value(player_move,i)
 
     end
-
+    # 
+    # call move with for loop that has set i=5 for example / actually skip move method because it has chomp shit in it.
+    #make new move method, that has same everything exept gives value that is set.
+    #give array [q,w,e,d,z,c].lenght = i
+    #fill game board and check if winning conditions are met if not give draw.
+    # so then i iliterate tho that shit and each time
 
     def set_board_value(player_input,i)
         
